@@ -127,7 +127,7 @@ public class MySqlDriverHelper {
             copyFile(bootstrapLibFile, libFile);
             return mysqlJarFileName;
         } catch (Exception e ) {
-            e.printStackTrace();
+            
             System.err.println("Failed to copy mysql driver into " + bootstrapLibDir + " and " + libDir);
         }
         return null;
