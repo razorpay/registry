@@ -79,7 +79,7 @@ public class RedisCacheTestMain {
         try {
             br.readLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            
         }
         /*while (!br.readLine().equals("S")) {
             br = new BufferedReader(new InputStreamReader(System.in));

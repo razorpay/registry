@@ -97,7 +97,7 @@ public class ReviewServiceResource {
             schemaRegistryClient.transitionState(schemaVersionId, targetStateId, stateDetails.getBytes());
             return Response.ok().build();
         } catch (Exception e) {
-            e.printStackTrace();
+            
             return Response.serverError().build();
         }
     }

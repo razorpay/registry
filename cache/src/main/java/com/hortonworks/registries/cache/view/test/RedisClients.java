@@ -61,7 +61,7 @@ public class RedisClients {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            
         }
     }
 }
