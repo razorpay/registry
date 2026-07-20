@@ -175,7 +175,7 @@ public class JWTAuthenticationHandler implements AuthenticationHandler {
         serializedJWT = getJWTFromCookie(req);
         if (serializedJWT == null) {
             String loginURL = constructLoginURL(request);
-            LOG.info("sending redirect to: " + loginURL);
+            LOG.info("sending redirect to: " + loginURL.replace("\r", "\\r").replace("\n", "\\n"));
             ((HttpServletResponse) response).sendRedirect(loginURL);
         } else {
             String userName = null;
@@ -199,7 +199,7 @@ public class JWTAuthenticationHandler implements AuthenticationHandler {
                 token = new AuthenticationToken(userName, userName, getType());
             } else {
                 String loginURL = constructLoginURL(request);
-                LOG.info("token validation failed - sending redirect to: " + loginURL);
+                LOG.info("token validation failed - sending redirect to: " + loginURL.replace('\r', '_').replace('\n', '_'));
                 ((HttpServletResponse) response).sendRedirect(loginURL);
             }
         }
