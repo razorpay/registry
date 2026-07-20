@@ -567,7 +567,7 @@ public class SchemaRegistryClient implements ISchemaRegistryClient {
     private SchemaDigestEntry buildSchemaTextEntry(SchemaVersion schemaVersion, String name) {
         byte[] digest;
         try {
-            digest = MessageDigest.getInstance("MD5").digest(schemaVersion.getSchemaText().getBytes("UTF-8"));
+            digest = MessageDigest.getInstance("SHA-256").digest(schemaVersion.getSchemaText().getBytes("UTF-8"));
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             throw new RuntimeException(e.getMessage(), e);
         }

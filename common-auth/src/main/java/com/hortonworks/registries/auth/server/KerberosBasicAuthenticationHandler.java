@@ -196,7 +196,7 @@ public class KerberosBasicAuthenticationHandler extends KerberosAuthenticationHa
         if (realmInRawPrincipal) {
             // there's a realm already in the given principal, use it
             identity = rawPrincipal;
-            LOG.debug("Realm was specified in principal {}, default realm was not added to the identity being authenticated", rawPrincipal);
+            LOG.debug("Realm was specified in principal {}, default realm was not added to the identity being authenticated", rawPrincipal.replace("\r", "\\r").replace("\n", "\\n"));
         } else if (!Utils.isBlank(defaultRealm)) {
             // the value for the default realm is not blank, append the realm to the given principal
             identity = rawPrincipal + "@" + defaultRealm;
